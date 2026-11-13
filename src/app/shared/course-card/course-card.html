@@ -1,0 +1,51 @@
+<div class="course-card">
+  <div class="course-image">
+    <img [src]="course.imageUrl" [alt]="course.title" />
+
+    <span class="category">{{ course.category }}</span>
+  </div>
+
+  <div class="course-content">
+    <h3>{{ course.title }}</h3>
+
+    <p class="description">{{ course.description }}</p>
+
+    <div class="instructor">
+      <i class="fa-regular fa-user"></i>
+      <span>{{ course.instructor }}</span>
+    </div>
+
+    <div class="course-info">
+      <span>
+        <i class="fa-regular fa-clock"></i>
+        {{ course.duration }}
+      </span>
+
+      <span>
+        <i class="fa-solid fa-users"></i>
+        {{ course.totalSlots - course.bookedSlots }} seats left
+      </span>
+    </div>
+
+    <!-- <button
+      class="enroll-btn"
+      [disabled]="course.bookedSlots >= course.totalSlots"
+      (click)="onEnroll()">
+
+      {{ course.bookedSlots >= course.totalSlots ? 'Fully Booked' : 'Enroll Now' }}
+
+    </button> -->
+
+    @if (mode === 'available') {
+      <button
+        class="enroll-btn"
+        [disabled]="course.bookedSlots >= course.totalSlots"
+        (click)="onEnroll()"
+      >
+        {{ course.bookedSlots >= course.totalSlots ? 'Fully Booked' : 'Enroll Now' }}
+      </button>
+    } @else {
+      <button class="unregister-btn" (click)="onUnregister()">Unregister</button>
+    }
+  </div>
+</div>

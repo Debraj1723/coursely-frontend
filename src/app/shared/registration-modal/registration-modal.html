@@ -1,0 +1,31 @@
+<div class="modal-overlay" (click)="close.emit()">
+  <div class="registrations-modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div>
+        <h2>My Registrations</h2>
+        <p>Manage the courses you have enrolled in.</p>
+      </div>
+
+      <button class="close-btn" (click)="close.emit()">&times;</button>
+    </div>
+
+    @if (registrations().length === 0) {
+      <div class="empty-state">
+        <h3>No registrations yet!</h3>
+        <p>You haven't enrolled in any courses.</p>
+
+        <button class="browse-btn" (click)="close.emit()">Explore Courses</button>
+      </div>
+    } @else {
+      <div class="registrations-list">
+        @for (registration of registrations(); track registration.courseId) {
+          <app-course-card
+            [course]="registration.course"
+            [mode]="'registered'"
+            (unregister)="onUnregister($event)"
+          ></app-course-card>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- Navbar -->
+<app-navbar
+  [userName]="userName"
+  [profileImage]="profileImage"
+  (login)="togglePopup('login')"
+  (signup)="togglePopup('signup')"
+  (myRegistrations)="togglePopup('registrations')"
+>
+</app-navbar>
+
+<main>
+  <section class="hero-section">
+    <div class="container hero-content">
+      <!-- Left content -->
+      <div class="hero-text">
+        <span class="hero-label">
+          <span class="label-icon">🎓</span>
+          LEARN. GROW. SUCCEED.
+        </span>
+
+        <h1>
+          Unlock Your Potential
+          <br />
+          With the <span>Right Courses</span>
+        </h1>
+
+        <p>
+          Discover courses designed to help you build skills, explore new opportunities and achieve
+          your goals.
+        </p>
+
+        <button class="explore-btn" (click)="scrollToCourses()">
+          Explore Courses
+          <span>→</span>
+        </button>
+      </div>
+
+      <div class="hero-visual">
+        <img
+          src="/main-banner.png"
+          alt="Coursely online learning illustration"
+          class="hero-illustration"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="courses-section" id="courses">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <h2>Explore Our Courses</h2>
+          <p>Find the right course to take your skills further.</p>
+        </div>
+      </div>
+
+      <div class="courses-grid">
+        @for (course of courses(); track course.courseId) {
+          <app-course-card [course]="course" (enroll)="registerCourse($event)"> </app-course-card>
+        }
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Authentication Modal -->
+@if (popupStatus) {
+  @if (popupType === 'login' || popupType === 'signup') {
+    <app-auth-modal [initialMode]="popupType" (close)="popupStatus = false"></app-auth-modal>
+  }
+
+  @if (popupType === 'registrations') {
+    <app-registration-modal (close)="popupStatus = false"></app-registration-modal>
+  }
+}

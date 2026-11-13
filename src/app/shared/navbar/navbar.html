@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="container navbar-container">
+    <a class="logo" routerLink="/">Coursely</a>
+
+    <div class="navbar-actions">
+      @if (authService.isAuthenticated()) {
+        <button class="registrations-btn" (click)="onMyRegistrations()">
+          <i class="fa-solid fa-book-open"></i>
+          My Registrations
+        </button>
+
+        <div class="profile-pill">
+          <div class="profile-avatar">
+            {{ authService.currentUser()?.name?.charAt(0)?.toUpperCase() || 'U' }}
+          </div>
+
+          <div class="profile-details">
+            <span class="user-name">
+              {{ authService.currentUser()?.name || userName }}
+            </span>
+            <span class="user-role">Student</span>
+          </div>
+        </div>
+
+        <button
+          class="logout-btn"
+          type="button"
+          (click)="onLogout()"
+          aria-label="Logout"
+          title="Logout"
+        >
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+      } @else {
+        <i class="fa-regular fa-circle-question profile-icon"></i>
+
+        <button class="auth-btn" (click)="onLogin()">Sign In</button>
+
+        <button class="auth-btn signup-btn" (click)="onSignup()">Sign Up</button>
+      }
+    </div>
+  </div>
+</nav>

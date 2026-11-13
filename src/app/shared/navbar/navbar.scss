@@ -1,0 +1,280 @@
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #f0eaf7;
+}
+
+.navbar-container {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #8050d5;
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ==============================
+   MY REGISTRATIONS
+================================ */
+
+.registrations-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+
+  color: #7044bd;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #f5effd;
+  }
+
+  i {
+    font-size: 15px;
+  }
+}
+
+/* ==============================
+   PROFILE PILL
+================================ */
+
+.profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 5px 14px 5px 6px;
+
+  border: 1px solid #eee7f7;
+  border-radius: 30px;
+  background: #faf8fd;
+
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #d9c8f1;
+  }
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9871e3, #7044bd);
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #342b43;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.user-role {
+  color: #958ba3;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+/* ==============================
+   LOGOUT
+================================ */
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 0 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  i {
+    font-size: 15px;
+  }
+
+  &:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(220, 38, 38, 0.18);
+  }
+}
+
+/* ==============================
+   LOGGED OUT PROFILE ICON
+================================ */
+
+.profile-icon {
+  color: #8050d5;
+  font-size: 23px;
+  margin-right: 2px;
+}
+
+/* ==============================
+   SIGN IN
+================================ */
+
+.auth-btn {
+  min-width: 90px;
+  height: 42px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+
+  color: #6741a5;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #f3edfc;
+    color: #8050d5;
+  }
+}
+
+/* ==============================
+   SIGN UP
+================================ */
+
+.signup-btn {
+  min-width: 105px;
+
+  background: linear-gradient(135deg, #9164df, #7545c5);
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(128, 80, 213, 0.18);
+
+  &:hover {
+    background: linear-gradient(135deg, #8050d5, #6738b5);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(128, 80, 213, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+  .navbar-container {
+    min-height: 68px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .registrations-btn {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .profile-pill {
+    gap: 8px;
+    padding: 4px 10px 4px 4px;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 14px;
+  }
+
+  .user-name {
+    font-size: 11px;
+  }
+
+  .user-role {
+    font-size: 10px;
+  }
+
+  .logout-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .auth-btn {
+    min-width: auto;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .signup-btn {
+    min-width: auto;
+  }
+
+  .profile-icon {
+    font-size: 20px;
+  }
+}

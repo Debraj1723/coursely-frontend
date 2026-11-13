@@ -1,1 +1,134 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* =====================================
+   Coursely - Global Theme
+===================================== */
+
+/* Theme Variables */
+:root {
+  --primary-color: #5935c5;
+  --primary-hover: #4726a8;
+  --secondary-color: #8064dc;
+
+  --background-color: #f8f7fc;
+  --surface-color: #ffffff;
+
+  --text-primary: #202033;
+  --text-secondary: #74748a;
+  --border-color: #e9e6f0;
+
+  --success-color: #16a36a;
+  --danger-color: #dc3545;
+
+  --shadow-sm: 0 2px 8px rgba(32, 32, 51, 0.06);
+  --shadow-md: 0 8px 24px rgba(32, 32, 51, 0.08);
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 20px;
+
+  --transition: all 0.25s ease;
+}
+
+/* =====================================
+   Reset
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =====================================
+   Common Layout
+===================================== */
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* =====================================
+   Buttons
+===================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+}
